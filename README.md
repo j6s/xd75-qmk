@@ -1,6 +1,6 @@
-# Ergodone keyboard layout & firmware
+# XD75 keyboard layout & firmware
 
-Setup for building and flashing the QMK firmware for ergodone
+Setup for building and flashing the QMK firmware for XD75
 with my preferred keyboard layout.
 
 I will not maintain another copy of the layout in the readme,
