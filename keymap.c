@@ -38,6 +38,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * 
      * For full documentation of available options
      * @see https://docs.qmk.fm/#/keycodes
+     *
+     * Double Bound keys:
+     * Some keys in the middle of the keyboard (e.g. 5/6 and B/N) are bound to the left and
+     * the right side in order to have them available to both hands.
+     *
      * 
      * .--------------------------------------------------------------------------------------------------------------------------------------.
      * | Esc    | 1      | 2      | 3      | 4      | 5      | 6      |        | 6      | 7      | 8      | 9      | 0      | -      | =      |
@@ -46,17 +51,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
      * | BkSpc  | A      | S      | D      | F      | G      | F6     |        | F7     | H      | J      | K      | L      | ;      | '      |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
-     * | LShift | Z      | X      | C      | V      | B      | PgDn   | up     | PgUp   | N      | M      | ,      | .      | /      | rShift |
+     * | LShift | Z      | X      | C      | V      | B      | N      | up     | B      | N      | M      | ,      | .      | /      | rShift |
      * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
-     * | LCtrl  | lWin   | lAlt   | Space   | Space  | Space  | left   | down   | right  | Enter  | [L1]   | rAlt   | [      | ]      | rCtrl  |
+     * | LCtrl  | lWin   | lAlt   | Space   | Space  | Space  | left  | down   | right | Enter   | [L1]   | rAlt   | [      | ]      | rCtrl  |
      * '--------------------------------------------------------------------------------------------------------------------------------------'
      */
     [L0] = LAYOUT_ortho_5x15(
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQUAL,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_F5,   _______, KC_F8,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
         KC_BSPC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_F6,   _______, KC_F7,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_PGUP, KC_UP,   KC_PGDN, KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-        KC_LCTL, KC_LWIN, KC_LALT, KC_SPC, KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,  MO(L1),  KC_RALT, KC_LBRC, KC_RBRC, KC_RCTL
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,   KC_UP,   KC_B,     KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+        KC_LCTL, KC_LWIN, KC_LALT, KC_SPC, KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_ENT,  MO(L1),  KC_RALT, KC_LBRC, KC_RBRC, KC_RCTL
     ),
 
     /*
@@ -67,9 +72,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
      * |        |        |        |        |        |        |        |        |        |        | left   | down   | right  |        |        |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * |        |        |        |        |        |        |        |        | Vol +  |        | home   |        |  end   |        |        |
+     * |        |        |        |        |        |        |        | Vol +  |        |        | home   |        |  end   |        |        |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * |        |        |        |        |        |        |        | prev   | Vol -  | next   |        | FN     |        |        |        |
+     * |        |        |        |        |        |        | prev   | Vol -  | next   |        |        | FN     |        |        |        |
      * '--------------------------------------------------------------------------------------------------------------------------------------'
      */
     [L1] = LAYOUT_ortho_5x15(
