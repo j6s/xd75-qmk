@@ -15,7 +15,6 @@ flash: ${QMK_DIR} build
 	@cat bootloader-mode-instructions.txt
 	docker run --rm -it \
 		--privileged -v /dev:/dev \
-		--user $$(id -u):$$(id -g) \
 		-v "$$(pwd):/build" \
 		-w /build/qmk_firmware \
 		-e ALT_GET_KEYBOARDS=true \
@@ -42,7 +41,6 @@ ${QMK_DIR}:
 build: ${QMK_DIR}
 	docker run --rm -it \
 		--privileged -v /dev:/dev \
-		--user $$(id -u):$$(id -g) \
 		-v "$$(pwd):/build" \
 		-w /build/qmk_firmware \
 		-e ALT_GET_KEYBOARDS=true \
